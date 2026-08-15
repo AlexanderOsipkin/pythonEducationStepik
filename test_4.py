@@ -29,6 +29,6 @@ print("Input Password")
 password.send_keys(Keys.RETURN)  # имитирует enter
 time.sleep(2)
 
-nowDate = datetime.datetime.now(datetime.UTC).strftime("%Y.%m.%d.%H.%M.%S")  # задаем переменную с текущим временем
+nowDate = datetime.datetime.now().strftime("%Y.%m.%d.%H.%M.%S")  # задаем переменную с текущим временем
 nameScreenshot = 'screenshot' + nowDate + '.png'  # задаем название для скриншота
-driver.save_screenshot(f'./Screen/{nameScreenshot}') # сохраняем скриншот в нужную папку
+driver.save_screenshot(f'./screen/{nameScreenshot}') # сохраняем скриншот в нужную папку
