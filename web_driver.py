@@ -19,7 +19,13 @@ driver.maximize_window()
 # userName = driver.find_element(By.XPATH, "//*[@id='user-name']") # xpath full
 # userName = driver.find_element(By.XPATH, "//input[@id='user-name']") # xpath
 userName = driver.find_element(By.XPATH, "//input[@data-test='username']") # xpath data-test
+# password = driver.find_element(By.CSS_SELECTOR, "[id='password']") #CSS selector
+password = driver.find_element(By.CSS_SELECTOR, "#password") #CSS selector
+buttonLogin = driver.find_element(By.XPATH, "//input[@value='Login']")
+
 userName.send_keys("standard_user")
+password.send_keys("secret_sauce")
+buttonLogin.click()
 
 
 # time.sleep(10)
