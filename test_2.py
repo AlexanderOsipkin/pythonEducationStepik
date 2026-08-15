@@ -31,3 +31,5 @@ warningText = driver.find_element(By.XPATH, "//h3[@data-test='error']")
 valueWarningText = warningText.text
 assert valueWarningText == "Epic sadface: Username and password do not match any user in this service"
 print("Good test")
+
+driver.refresh()
