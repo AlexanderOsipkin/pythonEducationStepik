@@ -164,8 +164,4 @@ cython_debug/
 allure-results
 allure
 
-#credentinals
-.env
-
-#old code
-start_tests_suite
+screen

@@ -17,7 +17,7 @@ driver.maximize_window()
 # userName = driver.find_element(By.ID, "user-name") # ID
 # userName = driver.find_element(By.NAME, "user-name") # NAME
 # userName = driver.find_element(By.XPATH, "//*[@id='user-name']") # xpath full
-# userName = driver.find_element(By.XPATH, "//input[@id='user-name']") # xpath
+# userName = driver.find_element(By.XPATH, "//input[@id='user-name']") # xpath, составляется //тег[@id=''], если нет id юзать любой другой элемент
 userName = driver.find_element(By.XPATH, "//input[@data-test='username']") # xpath data-test
 # password = driver.find_element(By.CSS_SELECTOR, "[id='password']") #CSS selector
 password = driver.find_element(By.CSS_SELECTOR, "#password") #CSS selector
