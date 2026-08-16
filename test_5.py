@@ -31,14 +31,14 @@ buttonLogin = driver.find_element(By.XPATH, "//input[@id='login-button']")
 buttonLogin.click()
 print("Click login Button")
 
-driver.execute_script("window.scrollTo(0, 200)") # скролл экрана по Х и Y
-action = ActionChains(driver) # заводим переменную
+driver.execute_script("window.scrollTo(0, 200)")  # скролл экрана по Х и Y на определенное количество пикселей, -200 - это вверх, 200 - вниз
+action = ActionChains(driver)  # заводим переменную
 whiteTshirtButton = driver.find_element(By.XPATH, "//button[@id='add-to-cart-sauce-labs-onesie']")
-action.move_to_element(whiteTshirtButton).perform() # перемещаемся к указанному элементу на экране
+action.move_to_element(whiteTshirtButton).perform()  # перемещаемся к указанному элементу на экране
 
 time.sleep(5)
 
 nowDate = datetime.datetime.now().strftime("%Y.%m.%d.%H.%M.%S")  # задаем переменную с текущим временем
 nameScreenshot = 'screenshot' + nowDate + '.png'  # задаем название для скриншота
-driver.save_screenshot(f'./screen/{nameScreenshot}') # сохраняем скриншот в нужную папку
+driver.save_screenshot(f'./screen/{nameScreenshot}')  # сохраняем скриншот в нужную папку
 print("Скриншот сохранен")
