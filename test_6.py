@@ -23,4 +23,4 @@ userName.send_keys(LoginStandardUser)
 print("Input Login")
 
 time.sleep(5)
-userName.clear()  # либо .send_keys(Keys.CONTROL + 'a') затем element.send_keys(Keys.BACKSPACE
+userName.clear()  # либо использовать .send_keys(Keys.CONTROL + 'a') затем element.send_keys(Keys.BACKSPACE
