@@ -116,3 +116,4 @@ productHeader = driver.find_element(By.XPATH, "//span[@data-test='title']")
 valueProductHeader = productHeader.text
 print(valueProductHeader)
 assert valueProductHeader == "Products"
+print("TEST PASSED")
