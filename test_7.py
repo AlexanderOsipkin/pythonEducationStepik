@@ -21,5 +21,21 @@ userName = driver.find_element(By.XPATH, "//input[@id='user-name']")
 userName.send_keys(LoginStandardUser)
 print("Input Login")
 
-time.sleep(5)
-userName.clear()  # либо использовать .send_keys(Keys.CONTROL + 'a') затем element.send_keys(Keys.BACKSPACE
+password = driver.find_element(By.XPATH, "//input[@id='password']")
+password.send_keys(passwordAll)
+print("Input Password")
+
+buttonLogin = driver.find_element(By.XPATH, "//input[@id='login-button']")
+buttonLogin.click()
+print("Click login Button")
+
+menuButton = driver.find_element(By.XPATH, "//button[@id='react-burger-menu-btn']")
+menuButton.click()
+print("Click menu button")
+time.sleep(3)
+
+linkAbout = driver.find_element(By.XPATH, "//a[@id='about_sidebar_link']")
+linkAbout.click()
+print("Click link button")
+
+
