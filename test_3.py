@@ -15,21 +15,21 @@ base_url = 'https://www.saucedemo.com/'
 driver.get(base_url)
 driver.maximize_window()
 
-LoginStandardUser = "standard_user"
-passwordAll = "secret_sauce"
+login_standard_user = "standard_user"
+password_all = "secret_sauce"
 
-userName = driver.find_element(By.XPATH, "//input[@id='user-name']")
-userName.send_keys(LoginStandardUser)
+user_name = driver.find_element(By.XPATH, "//input[@id='user-name']")
+user_name.send_keys(login_standard_user)
 print("Input Login")
 time.sleep(2)
-userName.send_keys(Keys.BACKSPACE) #удаляет 1 символ
+user_name.send_keys(Keys.BACKSPACE) #удаляет 1 символ
 time.sleep(2)
-userName.send_keys(Keys.BACKSPACE)
+user_name.send_keys(Keys.BACKSPACE)
 time.sleep(2)
-userName.send_keys("er") #добавляет удаленные символы обратно
+user_name.send_keys("er") #добавляет удаленные символы обратно
 
 password = driver.find_element(By.XPATH, "//input[@id='password']")
-password.send_keys(passwordAll)
+password.send_keys(password_all)
 print("Input Password")
 password.send_keys(Keys.RETURN) #имитирует enter
 

@@ -12,24 +12,24 @@ base_url = 'https://www.saucedemo.com/'
 driver.get(base_url)
 driver.maximize_window()
 
-LoginStandardUser = "standard_use"
-passwordAll = "secret_sauce"
+login_standard_user = "standard_use"
+password_all = "secret_sauce"
 
-userName = driver.find_element(By.XPATH, "//input[@id='user-name']")
-userName.send_keys(LoginStandardUser)
+user_name = driver.find_element(By.XPATH, "//input[@id='user-name']")
+user_name.send_keys(login_standard_user)
 print("Input Login")
 
 password = driver.find_element(By.XPATH, "//input[@id='password']")
-password.send_keys(passwordAll)
+password.send_keys(password_all)
 print("Input Password")
 
-buttonLogin = driver.find_element(By.XPATH, "//input[@id='login-button']")
-buttonLogin.click()
+button_login = driver.find_element(By.XPATH, "//input[@id='login-button']")
+button_login.click()
 print("Click login Button")
 
-warningText = driver.find_element(By.XPATH, "//h3[@data-test='error']")
-valueWarningText = warningText.text
-assert valueWarningText == "Epic sadface: Username and password do not match any user in this service"
+warning_text = driver.find_element(By.XPATH, "//h3[@data-test='error']")
+value_warning_text = warning_text.text
+assert value_warning_text == "Epic sadface: Username and password do not match any user in this service"
 print("Good test")
 
 driver.refresh()

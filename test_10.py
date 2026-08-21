@@ -11,5 +11,5 @@ driver.set_window_size(1920, 1080)
 base_url = "https://demoqa.com/"
 driver.get(base_url + "radio-button")
 
-radioButton = driver.find_element(By.XPATH, "//input[@id='yesRadio']")
-radioButton.click()
+radio_button = driver.find_element(By.XPATH, "//input[@id='yesRadio']")
+radio_button.click()

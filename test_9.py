@@ -14,6 +14,6 @@ driver.get(base_url + "checkbox")
 checkbox = driver.find_element(By.XPATH, "//span[@role='checkbox']")
 checkbox.click()
 
-checkboxTree = driver.find_element(By.XPATH,
+checkbox_tree = driver.find_element(By.XPATH,
                                    "//*[@id='root']/div/div/div/div[2]/div[1]/div[1]/div[3]/div/div/div/div[1]/span[2]")
-checkboxTree.click()
+checkbox_tree.click()

@@ -16,8 +16,8 @@ driver.get(base_url + "buttons")
 
 action = ActionChains(driver)
 
-doubleClick = driver.find_element(By.XPATH, "//button[@id='doubleClickBtn']")
-action.double_click(doubleClick).perform()
+double_click = driver.find_element(By.XPATH, "//button[@id='doubleClickBtn']")
+action.double_click(double_click).perform()
 
-rightClick = driver.find_element(By.XPATH, "//button[@id='rightClickBtn']")
-action.context_click(rightClick).perform()
+right_click = driver.find_element(By.XPATH, "//button[@id='rightClickBtn']")
+action.context_click(right_click).perform()
