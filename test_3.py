@@ -22,21 +22,21 @@ user_name = driver.find_element(By.XPATH, "//input[@id='user-name']")
 user_name.send_keys(login_standard_user)
 print("Input Login")
 time.sleep(2)
-user_name.send_keys(Keys.BACKSPACE) #удаляет 1 символ
+user_name.send_keys(Keys.BACKSPACE)  # удаляет 1 символ
 time.sleep(2)
 user_name.send_keys(Keys.BACKSPACE)
 time.sleep(2)
-user_name.send_keys("er") #добавляет удаленные символы обратно
+user_name.send_keys("er")  # добавляет удаленные символы обратно
 
 password = driver.find_element(By.XPATH, "//input[@id='password']")
 password.send_keys(password_all)
 print("Input Password")
-password.send_keys(Keys.RETURN) #имитирует enter
+password.send_keys(Keys.RETURN)  # имитирует enter
 
 filter = driver.find_element(By.XPATH, "//select[@data-test='product-sort-container']")
 filter.click()
 print("Click filter")
 time.sleep(2)
-filter.send_keys(Keys.DOWN) #Спускается на 1 элемент ниже в фильтре
+filter.send_keys(Keys.DOWN)  # Спускается на 1 элемент ниже в фильтре
 time.sleep(2)
 filter.send_keys(Keys.RETURN)
