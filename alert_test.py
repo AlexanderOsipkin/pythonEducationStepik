@@ -19,6 +19,7 @@ js_alert = driver.find_element(By.XPATH, "//button[@onclick='jsAlert()']")
 js_alert.click()
 print("Click alert button")
 
+print(driver.switch_to.alert.text)
 driver.switch_to.alert.accept()
 
 time.sleep(3)
@@ -26,6 +27,8 @@ time.sleep(3)
 # Есть кнопка и ОК и ОТМЕНА
 js_confirmon = driver.find_element(By.XPATH, "//button[@onclick='jsConfirm()']")
 js_confirmon.click()
+print("Click confirmon button")
 
+print(driver.switch_to.alert.text)
 # driver.switch_to.alert.accept()  # подтвердить
 driver.switch_to.alert.dismiss()  # отклонить
