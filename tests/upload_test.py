@@ -13,7 +13,7 @@ driver.set_window_size(1920, 1080)
 base_url = "https://practice-automation.com/"
 driver.get(base_url + "file-upload")
 
-file = os.path.abspath("file_upload/file1.jpg")
+file = os.path.abspath("../file_upload/file1.jpg")
 
 chose_file_button = driver.find_element(By.XPATH, "//input[@id='file-upload']")
 chose_file_button.send_keys(file)

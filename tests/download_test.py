@@ -5,7 +5,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-download_path = file = os.path.abspath("file_download")
+download_path = file = os.path.abspath("../file_download")
 
 options = webdriver.ChromeOptions()
 
