@@ -38,63 +38,27 @@ print("Выбери один из следующих товаров и укаж�
       "6 - Test.allTheThings() T-Shirt (Red)"
       )
 
-product = input()
+product = int(input())
 print("Выбран товар:", product)
 
-# ДЕЛАЕМ СЛОВАРЬ СО ВСЕМИ ДАННЫМИ ПО КАЖДОМУ ТОВАРУ НА СТРАНИЦЕ
-products = {
-    "1": {
-        "title": "item_4_title_link",
-        "price": "(//div[@data-test='inventory-item-price'])[1]",
-        "button": "add-to-cart-sauce-labs-backpack"
-    },
-    "2": {
-        "title": "item_0_title_link",
-        "price": "(//div[@data-test='inventory-item-price'])[2]",
-        "button": "add-to-cart-sauce-labs-bike-light"
-    },
-    "3": {
-        "title": "item_1_title_link",
-        "price": "(//div[@data-test='inventory-item-price'])[3]",
-        "button": "add-to-cart-sauce-labs-bolt-t-shirt"
-    },
-    "4": {
-        "title": "item_5_title_link",
-        "price": "(//div[@data-test='inventory-item-price'])[4]",
-        "button": "add-to-cart-sauce-labs-fleece-jacket"
-    },
-    "5": {
-        "title": "item_2_title_link",
-        "price": "(//div[@data-test='inventory-item-price'])[5]",
-        "button": "add-to-cart-sauce-labs-onesie"
-    },
-    "6": {
-        "title": "item_3_title_link",
-        "price": "(//div[@data-test='inventory-item-price'])[6]",
-        "button": "add-to-cart-test.allthethings()-t-shirt-(red)"
-    }
-}
-
 # ПРОВЕРЯЕМ НАЛИЧИЕ ТОВАРА В СПИСКЕ
-if product not in products:
+if product < 1 or product > 6:
     print("Неверный номер товара")
     driver.quit()
     exit()
 
-selected_product = products[product]
-
 # ИНФОРМАЦИЯ О ПРОДУКТЕ КОТОРЫЙ ВЫБРАЛ ПОЛЬЗОВАТЕЛЬ
-product_title = driver.find_element(By.ID, selected_product["title"])
+product_title = driver.find_element(By.XPATH, f"(//a[contains(@id, 'title_link')])[{product}]")
 value_product = product_title.text
 print("Название товара:", value_product)
 
 # НАХОДИМ ЦЕНУ ВЫБРАНОГО ТОВАРА ПОЛЬЗОВАТЕЛЕМ
-product_price = driver.find_element(By.XPATH, selected_product["price"])
+product_price = driver.find_element(By.XPATH, f"(//div[@data-test='inventory-item-price'])[{product}]")
 value_price_product = product_price.text
 print("Цена товара:", value_price_product)
 
 # ДОБОВЛЯЕМ ТОВАР В КОРЗИНУ
-select_product = driver.find_element(By.ID, selected_product["button"])
+select_product = driver.find_element(By.XPATH, f"(//button[starts-with(@id, 'add-to-cart')])[{product}]")
 select_product.click()
 print("Товар добавлен в корзину")
 
